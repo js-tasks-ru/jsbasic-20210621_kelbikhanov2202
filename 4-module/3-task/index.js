@@ -1,4 +1,5 @@
 function highlight(table) {
+    console.log(table);
   
   let tbody = table.getElementsByTagName('tbody')[0];
   let trs = tbody.getElementsByTagName('tr');
@@ -28,6 +29,5 @@ function highlight(table) {
             }
         }
     );
+    console.log(trs);
 }
-
-highlight(document.querySelector('.js-teachers')); 
