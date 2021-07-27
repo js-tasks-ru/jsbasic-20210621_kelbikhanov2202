@@ -4,7 +4,7 @@ function toggleText() {
 
   button.onclick = function() {
     let isToggle = text.hidden == false;
-    text.hidden = isToggle ? hidden = true : hidden = false;
+    text.hidden = isToggle;
   }
 }
 
