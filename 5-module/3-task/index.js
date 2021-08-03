@@ -3,7 +3,6 @@ function initCarousel() {
   let position = 0;
   const slidesToShow = 1;
   const slidesToScroll = 1;
-  const container = document.querySelector('.carousel');
   const track = document.querySelector('.carousel__inner');
   const btnPrev = document.querySelector('.carousel__arrow_left');
   const btnNext = document.querySelector('.carousel__arrow_right');
@@ -18,21 +17,21 @@ function initCarousel() {
     item.style.minWidth = `${itemWidth}px`;
   });
   
-  btnNext.addEventListener('click', () => {
+  btnNext.onclick = () => {
     const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
     position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
       
     setPosition();
     checkBtns();
-  });
+  };
 
-  btnPrev.addEventListener('click', () => {
+  btnPrev.onclick = () => {
     const itemsLeft = Math.abs(position) / itemWidth;
     position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
 
     setPosition();
     checkBtns();
-  });
+  };
 
   const setPosition = () => {
     track.style.transform = `translateX(${position}px)`;
